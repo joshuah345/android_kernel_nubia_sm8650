@@ -1,3 +1,4 @@
+/* SPDX-License-Identifier: GPL-2.0-or-later */
 #ifndef __LEDS_AW22XXX_REG_H__
 #define __LEDS_AW22XXX_REG_H__
 
@@ -49,46 +50,46 @@
  *
  *****************************************************/
 #define REG_NONE_ACCESS                 0
-#define REG_RD_ACCESS                   1 << 0
-#define REG_WR_ACCESS                   1 << 1
+#define REG_RD_ACCESS                   (1 << 0)
+#define REG_WR_ACCESS                   (1 << 1)
 #define AW22XXX_REG_MAX                 0x100
 
 const unsigned char aw22xxx_reg_access[AW22XXX_REG_MAX] = {
-  [REG_CHIPID  ] = REG_RD_ACCESS,
-  [REG_SRST    ] = REG_RD_ACCESS|REG_WR_ACCESS,
-  [REG_GCR     ] = REG_RD_ACCESS|REG_WR_ACCESS,
-  [REG_CLKCTR  ] = REG_RD_ACCESS|REG_WR_ACCESS,
-  [REG_MCUCTR  ] = REG_RD_ACCESS|REG_WR_ACCESS,
-  [REG_TASK0   ] = REG_RD_ACCESS|REG_WR_ACCESS,
-  [REG_TASK1   ] = REG_RD_ACCESS|REG_WR_ACCESS,
-  [REG_PST     ] = REG_RD_ACCESS,
-  [REG_INTCFG  ] = REG_RD_ACCESS|REG_WR_ACCESS,
-  [REG_INTEN   ] = REG_RD_ACCESS|REG_WR_ACCESS,
-  [REG_INTST   ] = REG_RD_ACCESS|REG_WR_ACCESS,
-  [REG_IMAX    ] = REG_RD_ACCESS|REG_WR_ACCESS,
-  [REG_AUDCTR  ] = REG_RD_ACCESS|REG_WR_ACCESS,
-  [REG_IGAIN   ] = REG_RD_ACCESS|REG_WR_ACCESS,
-  [REG_GAIN    ] = REG_RD_ACCESS,
-  [REG_UVLO    ] = REG_RD_ACCESS|REG_WR_ACCESS,
-  [REG_UVLOTHR ] = REG_RD_ACCESS|REG_WR_ACCESS,
-  [REG_DBGCTR  ] = REG_RD_ACCESS|REG_WR_ACCESS,
-  [REG_ADDR1   ] = REG_RD_ACCESS|REG_WR_ACCESS,
-  [REG_ADDR2   ] = REG_RD_ACCESS|REG_WR_ACCESS,
-  [REG_DATA    ] = REG_RD_ACCESS|REG_WR_ACCESS,
-  [REG_BSTCTR  ] = REG_RD_ACCESS|REG_WR_ACCESS,
-  [REG_FLSBSTD0] = REG_RD_ACCESS,
-  [REG_FLSBSTD1] = REG_RD_ACCESS,
-  [REG_FLSCTR  ] = REG_RD_ACCESS|REG_WR_ACCESS,
-  [REG_FLSCFG1 ] = REG_RD_ACCESS|REG_WR_ACCESS,
-  [REG_FLSCFG2 ] = REG_RD_ACCESS|REG_WR_ACCESS,
-  [REG_FLSCFG3 ] = REG_RD_ACCESS|REG_WR_ACCESS,
-  [REG_FLSCFG4 ] = REG_RD_ACCESS|REG_WR_ACCESS,
-  [REG_FLSWP1  ] = REG_RD_ACCESS|REG_WR_ACCESS,
-  [REG_FLSWP2  ] = REG_RD_ACCESS|REG_WR_ACCESS,
-  [REG_FLSRP   ] = REG_RD_ACCESS|REG_WR_ACCESS,
-  [REG_DECCFG  ] = REG_RD_ACCESS|REG_WR_ACCESS,
-  [REG_FLSWP3  ] = REG_RD_ACCESS|REG_WR_ACCESS,
-  [REG_PAGE    ] = REG_RD_ACCESS|REG_WR_ACCESS,
+	[REG_CHIPID] = REG_RD_ACCESS,
+	[REG_SRST] = REG_RD_ACCESS|REG_WR_ACCESS,
+	[REG_GCR] = REG_RD_ACCESS|REG_WR_ACCESS,
+	[REG_CLKCTR] = REG_RD_ACCESS|REG_WR_ACCESS,
+	[REG_MCUCTR] = REG_RD_ACCESS|REG_WR_ACCESS,
+	[REG_TASK0] = REG_RD_ACCESS|REG_WR_ACCESS,
+	[REG_TASK1] = REG_RD_ACCESS|REG_WR_ACCESS,
+	[REG_PST] = REG_RD_ACCESS,
+	[REG_INTCFG] = REG_RD_ACCESS|REG_WR_ACCESS,
+	[REG_INTEN] = REG_RD_ACCESS|REG_WR_ACCESS,
+	[REG_INTST] = REG_RD_ACCESS|REG_WR_ACCESS,
+	[REG_IMAX] = REG_RD_ACCESS|REG_WR_ACCESS,
+	[REG_AUDCTR] = REG_RD_ACCESS|REG_WR_ACCESS,
+	[REG_IGAIN] = REG_RD_ACCESS|REG_WR_ACCESS,
+	[REG_GAIN] = REG_RD_ACCESS,
+	[REG_UVLO] = REG_RD_ACCESS|REG_WR_ACCESS,
+	[REG_UVLOTHR] = REG_RD_ACCESS|REG_WR_ACCESS,
+	[REG_DBGCTR] = REG_RD_ACCESS|REG_WR_ACCESS,
+	[REG_ADDR1] = REG_RD_ACCESS|REG_WR_ACCESS,
+	[REG_ADDR2] = REG_RD_ACCESS|REG_WR_ACCESS,
+	[REG_DATA] = REG_RD_ACCESS|REG_WR_ACCESS,
+	[REG_BSTCTR] = REG_RD_ACCESS|REG_WR_ACCESS,
+	[REG_FLSBSTD0] = REG_RD_ACCESS,
+	[REG_FLSBSTD1] = REG_RD_ACCESS,
+	[REG_FLSCTR] = REG_RD_ACCESS|REG_WR_ACCESS,
+	[REG_FLSCFG1] = REG_RD_ACCESS|REG_WR_ACCESS,
+	[REG_FLSCFG2] = REG_RD_ACCESS|REG_WR_ACCESS,
+	[REG_FLSCFG3] = REG_RD_ACCESS|REG_WR_ACCESS,
+	[REG_FLSCFG4] = REG_RD_ACCESS|REG_WR_ACCESS,
+	[REG_FLSWP1] = REG_RD_ACCESS|REG_WR_ACCESS,
+	[REG_FLSWP2] = REG_RD_ACCESS|REG_WR_ACCESS,
+	[REG_FLSRP] = REG_RD_ACCESS|REG_WR_ACCESS,
+	[REG_DECCFG] = REG_RD_ACCESS|REG_WR_ACCESS,
+	[REG_FLSWP3] = REG_RD_ACCESS|REG_WR_ACCESS,
+	[REG_PAGE] = REG_RD_ACCESS|REG_WR_ACCESS,
 };
 
 /******************************************************
@@ -191,19 +192,19 @@ const unsigned char aw22xxx_reg_access[AW22XXX_REG_MAX] = {
 #define BIT_INTST_FUNCMPE               (1<<0)
 
 #define BIT_IMAX_MASK                   (~(15<<0))
-#define BIT_IMAX_75mA                   ( 7<<0)
-#define BIT_IMAX_60mA                   ( 6<<0)
-#define BIT_IMAX_45mA                   ( 5<<0)
+#define BIT_IMAX_75mA                   (7<<0)
+#define BIT_IMAX_60mA                   (6<<0)
+#define BIT_IMAX_45mA                   (5<<0)
 #define BIT_IMAX_40mA                   (14<<0)
-#define BIT_IMAX_30mA                   ( 4<<0)
+#define BIT_IMAX_30mA                   (4<<0)
 #define BIT_IMAX_20mA                   (12<<0)
-#define BIT_IMAX_15mA                   ( 3<<0)
+#define BIT_IMAX_15mA                   (3<<0)
 #define BIT_IMAX_10mA                   (11<<0)
-#define BIT_IMAX_9mA                    ( 2<<0)
-#define BIT_IMAX_6mA                    ( 1<<0)
-#define BIT_IMAX_4mA                    ( 9<<0)
-#define BIT_IMAX_3mA                    ( 0<<0)
-#define BIT_IMAX_2mA                    ( 8<<0)
+#define BIT_IMAX_9mA                    (2<<0)
+#define BIT_IMAX_6mA                    (1<<0)
+#define BIT_IMAX_4mA                    (9<<0)
+#define BIT_IMAX_3mA                    (0<<0)
+#define BIT_IMAX_2mA                    (8<<0)
 
 #define BIT_AUDCTR_PRCHG_MASK           (~(1<<3))
 #define BIT_AUDCTR_PRCHG_ENABLE         (1<<3)
@@ -232,4 +233,9 @@ const unsigned char aw22xxx_reg_access[AW22XXX_REG_MAX] = {
 #define BIT_BSTCTR_BSTEN_DISABLE        (0<<0)
 
 
+#define CURRENT_CMD_BASE		(0xA0)
+#define PWM_CMD_BASE			(0xC0)
+#define UPDATE_CMD			(0x07)
+#define CURRENT_MAX			(0xFF)
+#define PWM_MAX			(0xFF)
 #endif

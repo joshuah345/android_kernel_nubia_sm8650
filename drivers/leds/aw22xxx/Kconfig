@@ -1,20 +1,7 @@
-#
-# nubia led aw9106 driver configuration
-#
-
-config NUBIA_LED_AW22XXX
-	tristate "nubia led aw22xxx driver"
-	default n
+config LEDS_AW22XXX
+	tristate "LED Support for AW22XXX"
+	depends on LEDS_CLASS && I2C
 	help
-	  Say Y here if you have a nubia led aw22xxx connected
-	  to your system.
-
-	  If unsure, say N.
-config NUBIA_LED_AW22XXX_CTS
-	bool "nubia led aw22xxx driver cts"
-	default n
-	help
-	  Say Y here if you have a nubia led aw22xxx cts
-	  to your system.
-
-	  If unsure, say N.
+	  this option enables support for the AW22XXX LED connected
+	  through I2C. Say Y to enable support for the AW22XXX LED
+	  light automatically.
