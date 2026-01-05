@@ -1447,8 +1447,6 @@ err_sysfs:
 	devm_free_irq(&i2c->dev, gpio_to_irq(aw22xxx->irq_gpio), aw22xxx);
 err_irq:
 err_id:
-	devm_gpio_free(&i2c->dev, aw22xxx->reset_gpio);
-	devm_gpio_free(&i2c->dev, aw22xxx->irq_gpio);
 err_gpio_request:
 err_parse_dt:
 	devm_kfree(&i2c->dev, aw22xxx);
@@ -1456,7 +1454,7 @@ err_parse_dt:
 	return ret;
 }
 
-static int aw22xxx_i2c_remove(struct i2c_client *i2c)
+static int aw22xxx_i2c_remove_int(struct i2c_client *i2c)
 {
 	struct aw22xxx *aw22xxx = i2c_get_clientdata(i2c);
 
@@ -1465,15 +1463,15 @@ static int aw22xxx_i2c_remove(struct i2c_client *i2c)
 
 	devm_free_irq(&i2c->dev, gpio_to_irq(aw22xxx->irq_gpio), aw22xxx);
 
-	if (gpio_is_valid(aw22xxx->reset_gpio))
-		devm_gpio_free(&i2c->dev, aw22xxx->reset_gpio);
-	if (gpio_is_valid(aw22xxx->irq_gpio))
-		devm_gpio_free(&i2c->dev, aw22xxx->irq_gpio);
-
 	devm_kfree(&i2c->dev, aw22xxx);
 	aw22xxx = NULL;
 
 	return 0;
+}
+
+static void aw22xxx_i2c_remove(struct i2c_client *i2c)
+{
+        aw22xxx_i2c_remove_int(i2c);
 }
 
 static const struct i2c_device_id aw22xxx_i2c_id[] = {
@@ -1494,7 +1492,11 @@ static struct i2c_driver aw22xxx_i2c_driver = {
 		.of_match_table = of_match_ptr(aw22xxx_dt_match),
 	},
 	.probe = aw22xxx_i2c_probe,
+#if LINUX_VERSION_CODE >= KERNEL_VERSION(6,5,0)
+	.remove = aw22xxx_i2c_remove_int,
+#else
 	.remove = aw22xxx_i2c_remove,
+#endif
 	.id_table = aw22xxx_i2c_id,
 };
 

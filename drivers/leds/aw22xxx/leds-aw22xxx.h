@@ -24,6 +24,8 @@
 #define AW22127_CHIPID      0x27
 
 #define AW22XXX_RGB_MAX     9
+#define FW_ACTION_NOHOTPLUG 0
+#define FW_ACTION_HOTPLUG 1
 
 enum aw22xxx_chipids {
 	AW22XXX = 0,
